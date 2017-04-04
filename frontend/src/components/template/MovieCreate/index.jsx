@@ -98,7 +98,7 @@ export default class MovieCreate extends Component {
       ]
     }
     console.log(processedData);
-    // canvasMovie();
+    canvasMovie();
   }
 
   openModal() {
