@@ -141,11 +141,8 @@ class OpTypeEncoder {
     // テキストの描画
     drawLogo(this.scene.text, this.scene.opTextColor, [width/2-this.titleBox[2]/2 + 100, this.titleBox[1] + 100])
 
-    Promise.resolve()
-      .then(function() {
-        //枠の描画
-        return drawImage(logo, width/2-boxWidth/2+boxWidth*0.15, 180+boxWidth*0.20, boxWidth*0.7, boxWidth*0.7)
-      })
+        //枠の描画 
+    drawImage(logo, width/2-boxWidth/2+boxWidth*0.15, 180+boxWidth*0.20, boxWidth*0.7, boxWidth*0.7)
       .then(function () {
         return new Promise((resolve, reject) => {
           exportImages.push(exportPng())
@@ -186,11 +183,8 @@ class ImageTypeEncoder {
     // drawText(this.scene.text +'\n' + time, 100, 300, 10)
     drawText(this.scene.text, 100, 300, 10)
 
-    Promise.resolve()
-      .then(function() {
-        //枠の描画
-        return drawImage(iphoneImage, width/2, 0, 450, height)
-      })
+    //枠の描画
+    drawImage(iphoneImage, width/2, 0, 450, height)
       .then(function() {
         //枠の描画
         return drawImage(image, 758, 168, 216, 393)
@@ -239,11 +233,7 @@ class MovieTypeEncoder {
     // テキストの描画
     drawText(this.scene.text)
 
-    Promise.resolve()
-      .then(function() {
-        //枠の描画
-        return drawImage(iphoneImage, width/2, 0, 450, height)
-      })
+    drawImage(iphoneImage, width/2, 0, 450, height)
       .then(function () {
         return new Promise(function(resolve, reject) {
           drawVideo()
