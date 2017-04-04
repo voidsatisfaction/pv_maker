@@ -34,11 +34,23 @@ const howToData = [
 
 ];
 
+function speechSetup() {
+  const synthes = new SpeechSynthesisUtterance()
+  synthes.lang = "ko-KO"
+
+  console.log('say: ' + '당신은 낚였습니다.')
+  synthes.text = "당신은 낚였습니다.... 아줌마 바보 멍청이."
+  speechSynthesis.speak(synthes);
+}
+
 export default class Home extends Component {
   testApi() {
     api
     .get('/pvs')
     .then((response) => {console.log(response)});
+  }
+  componentWillMount() {
+    speechSetup();
   }
   render() {
     console.log(this.props);
@@ -57,6 +69,7 @@ export default class Home extends Component {
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center center',
             opacity: .7,
+            backgroundAttachment: 'fixed',
           }}
         >
           {/* Jumbotron */}
